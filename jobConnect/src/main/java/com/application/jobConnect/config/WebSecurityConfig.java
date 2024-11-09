@@ -1,7 +1,6 @@
 package com.application.jobConnect.config;
 
 import com.application.jobConnect.services.CustomUserDetailsService;
-import com.application.jobConnect.util.CustomUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
