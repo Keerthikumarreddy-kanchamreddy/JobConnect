@@ -11,9 +11,7 @@ public class Skills {
     private int id;
 
     private String name;
-
     private String experienceLevel;
-
     private String yearsOfExperience;
 
     @ManyToOne(cascade = CascadeType.ALL)
