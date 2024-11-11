@@ -149,10 +149,7 @@ public class JobSeekerProfile {
 
     @Transient
     public String getPhotosImagePath(){
-        if(profilePhoto == null || userAccountId == null){
-            return null;
-        }
-
+        if(profilePhoto == null || userAccountId == null)return null;
         return "photos/candidate/" + userAccountId + "/" + profilePhoto;
     }
 
