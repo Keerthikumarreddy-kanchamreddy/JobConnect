@@ -3,11 +3,12 @@ package com.application.jobConnect.entity;
 import jakarta.persistence.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"userId", "job"})})
-public class JobSeekerApply {
+public class JobSeekerApply implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +16,7 @@ public class JobSeekerApply {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId", referencedColumnName = "user_account_id")
-    private JobSeekerApply userId;
+    private JobSeekerProfile userId;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="job", referencedColumnName = "jobPostId")
@@ -29,7 +30,7 @@ public class JobSeekerApply {
     public JobSeekerApply() {
     }
 
-    public JobSeekerApply(Integer id, JobSeekerApply userId, JobPostActivity job, Date applyDate, String coverLetter) {
+    public JobSeekerApply(Integer id, JobSeekerProfile userId, JobPostActivity job, Date applyDate, String coverLetter) {
         this.id = id;
         this.userId = userId;
         this.job = job;
@@ -45,11 +46,11 @@ public class JobSeekerApply {
         this.id = id;
     }
 
-    public JobSeekerApply getUserId() {
+    public JobSeekerProfile getUserId() {
         return userId;
     }
 
-    public void setUserId(JobSeekerApply userId) {
+    public void setUserId(JobSeekerProfile userId) {
         this.userId = userId;
     }
 
